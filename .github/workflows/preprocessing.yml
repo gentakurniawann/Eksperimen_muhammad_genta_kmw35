@@ -1,0 +1,30 @@
+name: Preprocessing Data
+
+on:
+  push:
+    paths:
+      - 'preprocessing/**'
+      - '.github/workflows/preprocessing.yml'
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas scikit-learn
+
+    - name: Run preprocessing script
+      run: |
+        cd preprocessing
+        python automate_muhammad_genta_kmw35.py
