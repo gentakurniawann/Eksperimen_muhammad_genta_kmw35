@@ -3,7 +3,6 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import mlflow
 
-# Requirement: Localhost MLFlow tracking for basic
 os.environ['MLFLOW_TRACKING_URI'] = "http://localhost:5000"
 
 def main():
