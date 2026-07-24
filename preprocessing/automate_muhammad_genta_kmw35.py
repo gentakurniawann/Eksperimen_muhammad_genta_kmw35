@@ -12,8 +12,8 @@ def save_data(df, filepath):
     df.to_csv(filepath, index=False)
 
 if __name__ == "__main__":
-    raw_data_path = os.path.join("..", "dataset_raw", "breast_cancer.csv")
-    processed_data_path = os.path.join("dataset_preprocessing", "breast_cancer_processed.csv")
+    raw_data_path = os.path.join("..", "breast_cancer_raw", "breast_cancer.csv")
+    processed_data_path = os.path.join("breast_cancer_preprocessing", "breast_cancer_processed.csv")
     
     print(f"Loading data from {raw_data_path}...")
     df = load_data(raw_data_path)
